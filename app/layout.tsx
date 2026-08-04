@@ -2,16 +2,20 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 
 import "./globals.css";
+
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,17 +27,18 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Premium Website Development, SEO, Google Ads, Meta Ads, Automation and Digital Marketing solutions for businesses looking to grow online.",
+    "Premium Website Development, SEO, Google Ads, Meta Ads, AI Automation and Digital Marketing services for businesses that want to grow online.",
 
   keywords: [
     "Website Developer",
     "Web Designer",
-    "Next.js Developer",
-    "WordPress Developer",
+    "Next.js",
+    "React",
+    "WordPress",
     "SEO",
     "Google Ads",
     "Meta Ads",
-    "Automation",
+    "AI Automation",
     "Digital Marketing",
     "Business Website",
     "Portfolio",
@@ -58,7 +63,7 @@ export const metadata: Metadata = {
     title: "Grey Studio",
 
     description:
-      "Modern websites, SEO, Automation & Digital Marketing that help businesses grow.",
+      "Premium Website Development, SEO, Google Ads, Meta Ads and AI Automation.",
 
     url: "https://your-domain.com",
 
@@ -75,11 +80,13 @@ export const metadata: Metadata = {
     title: "Grey Studio",
 
     description:
-      "Premium Website Development, SEO, Automation & Digital Marketing.",
+      "Premium Website Development, SEO, Google Ads, Meta Ads and AI Automation.",
   },
 
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
@@ -89,15 +96,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-[#050816] text-white`}
+        className={`${inter.variable} ${spaceGrotesk.variable} bg-[#050816] text-white antialiased`}
       >
+        {/* Navigation */}
         <Navbar />
 
-        <main className="pt-20">
+        {/* Main Content */}
+        <main className="min-h-screen pt-20">
           {children}
         </main>
+
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );
