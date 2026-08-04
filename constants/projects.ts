@@ -2,9 +2,6 @@ import {
   Sparkles,
   Globe,
   Briefcase,
-  LayoutDashboard,
-  Bot,
-  ShoppingBag,
 } from "lucide-react";
 
 export const projects = [
@@ -18,9 +15,7 @@ export const projects = [
     category: "AI Workspace",
 
     description:
-      "A premium all-in-one workspace for SEO, GEO & AEO featuring AI-powered productivity tools, modern UI, and a scalable Next.js architecture.",
-
-    image: "/projects/toolnovaai.webp",
+      "A premium AI-powered SEO, GEO & AEO workspace featuring professional productivity tools, modern UI, advanced text utilities and scalable architecture.",
 
     liveUrl: "https://toolnovaai.vercel.app",
 
@@ -42,11 +37,13 @@ export const projects = [
     highlights: [
       "Premium SaaS UI",
       "AI Workspace",
-      "Responsive",
       "Modern Dashboard",
+      "Responsive",
+      "Fast Performance",
     ],
 
-    gradient: "from-blue-500 via-violet-500 to-cyan-500",
+    gradient:
+      "from-blue-500 via-violet-500 to-cyan-500",
   },
 
   {
@@ -56,14 +53,12 @@ export const projects = [
 
     slug: "grey-portfolio",
 
-    category: "Personal Brand",
+    category: "Personal Portfolio",
 
     description:
-      "Modern personal portfolio showcasing website development, digital marketing, automation and creative work.",
+      "Modern portfolio showcasing website development, UI/UX design, automation, SEO and digital marketing expertise with premium design.",
 
-    image: "/projects/portfolio.webp",
-
-    liveUrl: "#",
+    liveUrl: "https://grey-zen.github.io",
 
     githubUrl: "#",
 
@@ -72,37 +67,38 @@ export const projects = [
     icon: Globe,
 
     technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Responsive Design",
+      "SEO",
     ],
 
     highlights: [
-      "Glass UI",
-      "Animations",
-      "SEO Ready",
+      "Modern UI",
       "Responsive",
+      "Portfolio",
+      "Animations",
     ],
 
-    gradient: "from-cyan-500 via-blue-500 to-indigo-500",
+    gradient:
+      "from-cyan-500 via-blue-500 to-indigo-500",
   },
 
   {
     id: 3,
 
-    title: "Business Website",
+    title: "Rishabh Workspace",
 
-    slug: "business-website",
+    slug: "rishabh-workspace",
 
-    category: "Corporate Website",
+    category: "Business Website",
 
     description:
-      "A high-converting business website designed for performance, lead generation and long-term scalability.",
+      "Professional business website presenting web development, automation, hosting, SEO, Google Ads and digital marketing services.",
 
-    image: "/projects/business.webp",
-
-    liveUrl: "#",
+    liveUrl:
+      "https://rishabhworkspace.wordpress.com",
 
     githubUrl: "#",
 
@@ -111,133 +107,25 @@ export const projects = [
     icon: Briefcase,
 
     technologies: [
-      "Next.js",
+      "WordPress",
       "SEO",
-      "Performance",
-      "Analytics",
+      "Google Ads",
+      "Hosting",
+      "Automation",
     ],
 
     highlights: [
+      "Business Website",
+      "Digital Marketing",
       "Lead Generation",
-      "Fast",
-      "Mobile First",
-      "Premium Design",
+      "Professional",
     ],
 
-    gradient: "from-emerald-500 via-green-500 to-teal-500",
-  },
-
-  {
-    id: 4,
-
-    title: "Admin Dashboard",
-
-    slug: "admin-dashboard",
-
-    category: "Dashboard",
-
-    description:
-      "A modern analytics dashboard with beautiful charts, reporting tools and business insights.",
-
-    image: "/projects/dashboard.webp",
-
-    liveUrl: "#",
-
-    githubUrl: "#",
-
-    featured: false,
-
-    icon: LayoutDashboard,
-
-    technologies: [
-      "React",
-      "Dashboard",
-      "Charts",
-      "Analytics",
-    ],
-
-    highlights: [
-      "Modern UI",
-      "Charts",
-      "Admin Panel",
-    ],
-
-    gradient: "from-orange-500 via-red-500 to-pink-500",
-  },
-
-  {
-    id: 5,
-
-    title: "AI Automation",
-
-    slug: "automation",
-
-    category: "Automation",
-
-    description:
-      "Custom workflow automation using AI, APIs and integrations to save time and improve business efficiency.",
-
-    image: "/projects/automation.webp",
-
-    liveUrl: "#",
-
-    githubUrl: "#",
-
-    featured: false,
-
-    icon: Bot,
-
-    technologies: [
-      "AI",
-      "Automation",
-      "APIs",
-      "OpenAI",
-    ],
-
-    highlights: [
-      "Workflow",
-      "AI",
-      "Automation",
-    ],
-
-    gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
-  },
-
-  {
-    id: 6,
-
-    title: "E-Commerce Store",
-
-    slug: "ecommerce",
-
-    category: "Online Store",
-
-    description:
-      "Fast and conversion-focused eCommerce website with premium shopping experience and SEO optimization.",
-
-    image: "/projects/ecommerce.webp",
-
-    liveUrl: "#",
-
-    githubUrl: "#",
-
-    featured: false,
-
-    icon: ShoppingBag,
-
-    technologies: [
-      "Next.js",
-      "E-Commerce",
-      "Stripe",
-      "SEO",
-    ],
-
-    highlights: [
-      "Fast Checkout",
-      "Mobile Friendly",
-      "SEO",
-    ],
-
-    gradient: "from-pink-500 via-rose-500 to-orange-500",
+    gradient:
+      "from-emerald-500 via-green-500 to-teal-500",
   },
 ];
+
+export const featuredProjects = projects.filter(
+  (project) => project.featured
+);
