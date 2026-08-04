@@ -1,6 +1,7 @@
 import Hero from "@/components/hero/Hero";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Services from "@/components/sections/Services";
+import WhyChooseMe from "@/components/sections/WhyChooseMe";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,8 @@ export default function HomePage() {
       <FeaturedProjects />
 
       <Services />
+
+      <WhyChooseMe />
     </main>
   );
 }
