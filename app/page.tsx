@@ -1,38 +1,119 @@
-import Hero from "@/components/hero/Hero";
-import About from "@/components/sections/About";
-import FeaturedProjects from "@/components/sections/FeaturedProjects";
-import Services from "@/components/sections/Services";
-import WhyChooseMe from "@/components/sections/WhyChooseMe";
-import Process from "@/components/sections/Process";
-import Technologies from "@/components/sections/Technologies";
-import Testimonials from "@/components/sections/Testimonials";
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
 
-export default function HomePage() {
+import "./globals.css";
+
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://your-domain.com"),
+
+  title: {
+    default: "Grey Studio | Website Developer & Digital Growth Specialist",
+    template: "%s | Grey Studio",
+  },
+
+  description:
+    "Premium Website Development, SEO, Google Ads, Meta Ads, AI Automation and Digital Marketing services for businesses that want to grow online.",
+
+  keywords: [
+    "Website Developer",
+    "Web Designer",
+    "Next.js",
+    "React",
+    "WordPress",
+    "SEO",
+    "Google Ads",
+    "Meta Ads",
+    "AI Automation",
+    "Digital Marketing",
+    "Business Website",
+    "Portfolio",
+  ],
+
+  authors: [
+    {
+      name: "Grey",
+    },
+  ],
+
+  creator: "Grey",
+
+  publisher: "Grey Studio",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Grey Studio",
+
+    description:
+      "Premium Website Development, SEO, Google Ads, Meta Ads and AI Automation.",
+
+    url: "https://your-domain.com",
+
+    siteName: "Grey Studio",
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Grey Studio",
+
+    description:
+      "Premium Website Development, SEO, Google Ads, Meta Ads and AI Automation.",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <main className="relative overflow-hidden">
-      {/* Hero */}
-      <Hero />
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} bg-[#050816] text-white antialiased`}
+      >
+        {/* Navigation */}
+        <Navbar />
 
-      {/* About */}
-      <About />
+        {/* Main Content */}
+        <main className="min-h-screen pt-20">
+          {children}
+        </main>
 
-      {/* Featured Projects */}
-      <FeaturedProjects />
-
-      {/* Services */}
-      <Services />
-
-      {/* Why Choose Me */}
-      <WhyChooseMe />
-
-      {/* Work Process */}
-      <Process />
-
-      {/* Technology Stack */}
-      <Technologies />
-
-      {/* Testimonials */}
-      <Testimonials />
-    </main>
+        {/* Footer */}
+        <Footer />
+      </body>
+    </html>
   );
 }
