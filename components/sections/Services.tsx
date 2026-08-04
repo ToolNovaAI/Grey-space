@@ -1,96 +1,92 @@
-import {
-  Globe,
-  Search,
-  Bot,
-  Megaphone,
-  Palette,
-  Wrench,
-} from "lucide-react";
-
-const services = [
-  {
-    icon: Globe,
-    title: "Website Development",
-    description:
-      "Modern, responsive, SEO-friendly websites built with the latest technologies for speed, performance, and conversions.",
-  },
-  {
-    icon: Search,
-    title: "SEO Optimization",
-    description:
-      "Technical SEO, On-Page SEO, Local SEO and performance improvements to help your website rank higher.",
-  },
-  {
-    icon: Megaphone,
-    title: "Google & Meta Ads",
-    description:
-      "Create and optimize advertising campaigns that generate leads, sales, and measurable business growth.",
-  },
-  {
-    icon: Bot,
-    title: "Business Automation",
-    description:
-      "Automate repetitive workflows using AI, APIs, forms, CRM integrations, and smart business processes.",
-  },
-  {
-    icon: Palette,
-    title: "UI / UX Design",
-    description:
-      "Premium interfaces focused on user experience, modern design systems, and higher conversion rates.",
-  },
-  {
-    icon: Wrench,
-    title: "Website Maintenance",
-    description:
-      "Security updates, backups, hosting support, monitoring, performance optimization, and ongoing improvements.",
-  },
-];
+import { services } from "@/constants/services";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Services() {
   return (
-    <section className="section">
+    <section
+      id="services"
+      className="relative section overflow-hidden"
+    >
+      {/* Background Glow */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="absolute right-0 bottom-20 h-72 w-72 rounded-full bg-violet-500/10 blur-[120px]" />
+      </div>
+
       <div className="container-custom">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+        {/* Section Header */}
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+          <span className="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
             Services
           </span>
 
-          <h2 className="mt-5 text-4xl font-bold md:text-5xl">
-            Everything Your
-            <span className="gradient-text"> Business Needs </span>
-            To Grow Online
+          <h2 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
+            Complete Digital
+            <span className="gradient-text"> Growth Solutions</span>
           </h2>
 
-          <p className="mt-6 text-lg text-slate-400">
-            I help businesses establish a powerful online presence with
-            premium websites, digital marketing, SEO, advertising, and
-            automation solutions.
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+            I help businesses build, market and grow their online presence
+            through premium websites, SEO, paid advertising, AI automation and
+            long-term technical support.
           </p>
         </div>
 
+        {/* Services Grid */}
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
 
             return (
               <div
-                key={service.title}
-                className="glass group rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2"
+                key={service.id}
+                className="glass group relative overflow-hidden rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:border-white/20"
               >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-white shadow-lg">
+                {/* Hover Glow */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 blur-3xl transition duration-500 group-hover:opacity-10`}
+                />
+
+                {/* Icon */}
+                <div
+                  className={`relative mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} text-white shadow-lg`}
+                >
                   <Icon size={30} />
                 </div>
 
-                <h3 className="mb-4 text-2xl font-semibold text-white">
+                {/* Title */}
+                <h3 className="mb-4 text-2xl font-bold text-white">
                   {service.title}
                 </h3>
 
+                {/* Description */}
                 <p className="leading-8 text-slate-400">
                   {service.description}
                 </p>
+
+                {/* CTA */}
+                <button className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
+                  Learn More
+                  <ArrowUpRight size={18} />
+                </button>
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-20 text-center">
+          <p className="mb-6 text-slate-400">
+            Looking for a custom solution tailored to your business?
+          </p>
+
+          <a
+            href="/contact"
+            className="btn-primary inline-flex items-center gap-3"
+          >
+            Let's Discuss Your Project
+            <ArrowUpRight size={18} />
+          </a>
         </div>
       </div>
     </section>
