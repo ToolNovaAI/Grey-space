@@ -1,141 +1,134 @@
+"use client";
+
 import HeroButtons from "./HeroButtons";
-import {
-  ArrowUpRight,
-  Sparkles,
-  CheckCircle2,
-} from "lucide-react";
+import { BadgeCheck, Sparkles, Zap } from "lucide-react";
 
 export default function HeroContent() {
   return (
-    <div className="relative flex min-h-[90vh] items-center">
+    <div className="max-w-3xl">
 
-      <div className="max-w-4xl py-28">
+      {/* Status */}
 
-        {/* Badge */}
+      <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-3">
 
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl">
+        <span className="relative flex h-3 w-3">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400"></span>
+        </span>
 
-          <Sparkles
-            size={16}
-            className="text-cyan-400"
-          />
+        <span className="text-sm font-semibold text-emerald-300">
+          Available for New Projects
+        </span>
 
-          <span className="text-sm font-medium text-slate-300">
-            Website Developer • SEO • Google Ads • Meta Ads • Automation
+      </div>
+
+      {/* Heading */}
+
+      <h1 className="text-5xl font-black leading-[1.05] tracking-tight md:text-7xl xl:text-8xl">
+
+        I Build
+
+        <span className="gradient-text block">
+          Premium Websites
+        </span>
+
+        That Grow
+
+        <span className="block">
+          Businesses.
+        </span>
+
+      </h1>
+
+      {/* Description */}
+
+      <p className="mt-10 max-w-2xl text-xl leading-9 text-slate-400">
+
+        I help startups, businesses and entrepreneurs create
+        high-performance websites, improve SEO, run profitable
+        Google & Meta Ads, automate workflows and build a
+        stronger online presence that turns visitors into customers.
+
+      </p>
+
+      {/* Feature List */}
+
+      <div className="mt-12 grid gap-5 sm:grid-cols-2">
+
+        <div className="flex items-center gap-4">
+          <BadgeCheck className="text-cyan-400" size={22} />
+
+          <span className="text-slate-300">
+            Premium Website Development
+          </span>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <BadgeCheck className="text-cyan-400" size={22} />
+
+          <span className="text-slate-300">
+            SEO & Technical Optimization
+          </span>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <BadgeCheck className="text-cyan-400" size={22} />
+
+          <span className="text-slate-300">
+            Google & Meta Ads
+          </span>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <BadgeCheck className="text-cyan-400" size={22} />
+
+          <span className="text-slate-300">
+            AI Automation Solutions
+          </span>
+        </div>
+
+      </div>
+
+      {/* Trust Cards */}
+
+      <div className="mt-14 flex flex-wrap gap-5">
+
+        <div className="glass flex items-center gap-3 rounded-2xl px-6 py-4">
+
+          <Sparkles className="text-cyan-400" size={20} />
+
+          <span className="font-medium">
+            Modern UI/UX
           </span>
 
         </div>
 
-        {/* Heading */}
+        <div className="glass flex items-center gap-3 rounded-2xl px-6 py-4">
 
-        <h1 className="max-w-5xl text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl">
+          <Zap className="text-yellow-400" size={20} />
 
-          Building
-
-          <span className="gradient-text">
-            {" "}High-Performance Websites{" "}
+          <span className="font-medium">
+            Fast Performance
           </span>
 
-          That Help Businesses Grow.
+        </div>
 
-        </h1>
+        <div className="glass flex items-center gap-3 rounded-2xl px-6 py-4">
 
-        {/* Description */}
+          <BadgeCheck className="text-emerald-400" size={20} />
 
-        <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400 md:text-xl">
-
-          I help startups, local businesses, creators and brands
-          establish a strong online presence through modern website
-          development, SEO, Google Ads, Meta Ads, automation and
-          digital marketing strategies focused on real business growth.
-
-        </p>
-
-        {/* Buttons */}
-
-        <div className="mt-12">
-
-          <HeroButtons />
+          <span className="font-medium">
+            SEO Ready
+          </span>
 
         </div>
 
-        {/* Trust Row */}
+      </div>
 
-        <div className="mt-14 flex flex-wrap items-center gap-6">
+      {/* CTA */}
 
-          <div className="flex items-center gap-2">
-
-            <CheckCircle2
-              className="text-emerald-400"
-              size={18}
-            />
-
-            <span className="text-sm text-slate-300">
-              SEO Optimized
-            </span>
-
-          </div>
-
-          <div className="flex items-center gap-2">
-
-            <CheckCircle2
-              className="text-emerald-400"
-              size={18}
-            />
-
-            <span className="text-sm text-slate-300">
-              Mobile First
-            </span>
-
-          </div>
-
-          <div className="flex items-center gap-2">
-
-            <CheckCircle2
-              className="text-emerald-400"
-              size={18}
-            />
-
-            <span className="text-sm text-slate-300">
-              Lightning Fast
-            </span>
-
-          </div>
-
-          <div className="flex items-center gap-2">
-
-            <CheckCircle2
-              className="text-emerald-400"
-              size={18}
-            />
-
-            <span className="text-sm text-slate-300">
-              Conversion Focused
-            </span>
-
-          </div>
-
-        </div>
-
-        {/* Availability */}
-
-        <div className="mt-12 inline-flex items-center gap-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 px-5 py-4">
-
-          <div className="h-3 w-3 rounded-full bg-emerald-400 animate-pulse" />
-
-          <p className="text-sm text-emerald-300">
-
-            Available for freelance projects and long-term collaborations.
-
-          </p>
-
-          <ArrowUpRight
-            size={18}
-            className="text-emerald-300"
-          />
-
-        </div>
-
+      <div className="mt-14">
+        <HeroButtons />
       </div>
 
     </div>
