@@ -116,7 +116,7 @@ export default function WhyChooseMe() {
             Let's Build Something Amazing Together
           </h3>
 
-          <p className="mx-auto mt-5 max-w-2xl text-slate-400">
+          <p className="mx-auto mt-5 max-w-2xl text-center text-slate-400">
             Whether you need a modern website, SEO strategy,
             advertising campaign or AI automation, I'm ready to help
             your business grow.
