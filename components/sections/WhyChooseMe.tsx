@@ -59,29 +59,29 @@ export default function WhyChooseMe() {
       className="section relative overflow-hidden"
     >
       <div className="container-custom">
-        {/* Header */}
 
-        <div className="mx-auto mb-20 max-w-3xl text-center">
+        {/* Header */}
+        <div className="mx-auto mb-20 flex w-full max-w-3xl flex-col items-center text-center">
+
           <span className="inline-flex rounded-full border border-blue-500/20 bg-blue-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
             Why Choose Me
           </span>
 
-          <h2 className="mt-6 text-4xl font-bold md:text-6xl">
-            More Than a
+          <h2 className="mt-6 text-center text-4xl font-bold md:text-6xl">
+            More Than a{" "}
             <span className="gradient-text">
-              {" "}Website Developer
+              Website Developer
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-center text-slate-400">
-             Whether you need a modern website, SEO strategy,
-             advertising campaign or AI automation, I'm ready to help
-             your business grow.
+          <p className="mx-auto mt-5 w-full max-w-2xl text-center text-slate-400">
+            Whether you need a modern website, SEO strategy,
+            advertising campaign or AI automation, I'm ready to help
+            your business grow.
           </p>
         </div>
 
-        {/* Cards */}
-
+        {/* Feature Cards */}
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
@@ -110,13 +110,13 @@ export default function WhyChooseMe() {
         </div>
 
         {/* Bottom CTA */}
+        <div className="mt-20 flex flex-col items-center rounded-3xl border border-white/10 bg-gradient-to-r from-blue-600/10 via-violet-600/10 to-cyan-600/10 p-10 text-center backdrop-blur-xl">
 
-        <div className="mt-20 rounded-3xl border border-white/10 bg-gradient-to-r from-blue-600/10 via-violet-600/10 to-cyan-600/10 p-10 text-center backdrop-blur-xl">
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-center text-3xl font-bold text-white">
             Let's Build Something Amazing Together
           </h3>
 
-          <p className="mx-auto mt-5 max-w-2xl text-center text-slate-400">
+          <p className="mx-auto mt-5 w-full max-w-2xl text-center text-slate-400">
             Whether you need a modern website, SEO strategy,
             advertising campaign or AI automation, I'm ready to help
             your business grow.
@@ -129,6 +129,7 @@ export default function WhyChooseMe() {
             Start Your Project
           </a>
         </div>
+
       </div>
     </section>
   );
