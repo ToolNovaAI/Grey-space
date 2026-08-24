@@ -181,7 +181,7 @@ Thank you.`
                     name="email"
                     type="email"
                     required
-                    placeholder="you@example.com"
+                    placeholder="rishabhgoko@gmail.com"
                     className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500/50 focus:bg-white/[0.06] focus:ring-4 focus:ring-blue-500/10"
                   />
                 </div>
