@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import {
   fadeIn,
@@ -36,7 +36,7 @@ const variantsMap = {
   left: slideLeft,
   right: slideRight,
   scale: scaleUp,
-};
+} as const;
 
 export default function FadeIn({
   children,
@@ -56,7 +56,9 @@ export default function FadeIn({
       viewport={viewport}
       transition={{
         delay,
-        ...(duration ? { duration } : {}),
+        ...(duration !== undefined
+          ? { duration }
+          : {}),
       }}
     >
       {children}
