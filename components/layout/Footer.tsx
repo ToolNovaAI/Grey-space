@@ -7,11 +7,12 @@ import {
   Mail,
   MapPin,
   Phone,
+  MessageCircle,
 } from "lucide-react";
 
 const services = [
   "Website Development",
-  "SEO",
+  "SEO & Technical Optimization",
   "Google Ads",
   "Meta Ads",
   "AI Automation",
@@ -41,248 +42,302 @@ const quickLinks = [
   },
 ];
 
+const whatsappMessage = encodeURIComponent(
+  "Hi Grey, I visited your website and I'd like to discuss a project with you."
+);
+
+const whatsappLink = `https://wa.me/917311170851?text=${whatsappMessage}`;
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#050816]">
+      {/* =====================================================
+          BACKGROUND
+      ===================================================== */}
 
-      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-[-180px] top-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[140px]" />
 
-      <div className="absolute inset-0 -z-10">
+        <div className="absolute bottom-[-180px] right-[-120px] h-96 w-96 rounded-full bg-violet-600/10 blur-[140px]" />
 
-        <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-blue-500/10 blur-[140px]" />
-
-        <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-violet-500/10 blur-[140px]" />
-
+        <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-[140px]" />
       </div>
 
       <div className="container-custom">
 
-        {/* Top */}
+        {/* ===================================================
+            MAIN FOOTER
+        =================================================== */}
 
-        <div className="grid gap-14 py-20 lg:grid-cols-4">
+        <div className="grid gap-14 py-16 sm:py-20 lg:grid-cols-[1.5fr_0.8fr_1fr_1.15fr] lg:gap-12">
 
-          {/* Brand */}
+          {/* =================================================
+              BRAND
+          ================================================= */}
 
-          <div>
+          <div className="max-w-md">
 
-            <div className="flex items-center gap-4">
-
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-2xl font-bold text-white">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-4"
+            >
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-2xl font-bold text-white shadow-lg shadow-blue-500/20 transition-transform duration-300 group-hover:scale-105">
                 G
               </div>
 
               <div>
-
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-2xl font-bold tracking-tight text-white">
                   Grey Studio
                 </h2>
 
-                <p className="text-slate-400">
-                  Digital Growth Specialist
+                <p className="mt-0.5 text-sm text-slate-400">
+                  Digital Growth
                 </p>
-
               </div>
+            </Link>
 
-            </div>
-
-            <p className="mt-8 leading-8 text-slate-400">
-
-              Helping businesses grow online through
-              premium websites, SEO, Google Ads,
-              Meta Ads, AI automation and modern
-              digital marketing strategies.
-
+            {/* Description */}
+            <p className="mt-7 max-w-md text-sm leading-7 text-slate-400 sm:text-base">
+              Helping businesses grow online through premium websites,
+              SEO, Google Ads, Meta Ads, AI automation and modern digital
+              marketing strategies.
             </p>
 
-            {/* Social */}
+            {/* Social Links */}
+            <div className="mt-7 flex items-center gap-3">
 
-            <div className="mt-8 flex gap-4">
-
-              <Link
+              {/* GitHub */}
+              <a
                 href="https://github.com/ToolNovaAI"
                 target="_blank"
-                className="glass flex h-12 w-12 items-center justify-center rounded-xl hover:scale-110"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="glass flex h-11 w-11 items-center justify-center rounded-xl text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:text-white"
               >
-                <Github size={20} />
-              </Link>
+                <Github size={19} />
+              </a>
 
-              <Link
+              {/* Website */}
+              <a
                 href="https://grey-zen.github.io"
                 target="_blank"
-                className="glass flex h-12 w-12 items-center justify-center rounded-xl hover:scale-110"
+                rel="noopener noreferrer"
+                aria-label="Website"
+                className="glass flex h-11 w-11 items-center justify-center rounded-xl text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:text-white"
               >
-                <Globe size={20} />
-              </Link>
+                <Globe size={19} />
+              </a>
 
-              <Link
+              {/* LinkedIn */}
+              <a
                 href="#"
-                className="glass flex h-12 w-12 items-center justify-center rounded-xl hover:scale-110"
+                aria-label="LinkedIn"
+                className="glass flex h-11 w-11 items-center justify-center rounded-xl text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:text-white"
               >
-                <Linkedin size={20} />
-              </Link>
+                <Linkedin size={19} />
+              </a>
 
             </div>
-
           </div>
 
-          {/* Quick Links */}
+          {/* =================================================
+              QUICK LINKS
+          ================================================= */}
 
           <div>
-
-            <h3 className="mb-8 text-xl font-bold">
-              Quick Links
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+              Navigation
             </h3>
 
-            <div className="space-y-4">
-
+            <nav className="mt-6 space-y-3.5">
               {quickLinks.map((item) => (
-
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="block text-slate-400 transition hover:text-white"
+                  className="group flex items-center gap-2 text-sm text-slate-400 transition-colors duration-200 hover:text-white"
                 >
-                  {item.title}
+                  <span>{item.title}</span>
+
+                  <ArrowUpRight
+                    size={14}
+                    className="opacity-0 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                  />
                 </Link>
-
               ))}
-
-            </div>
-
+            </nav>
           </div>
 
-          {/* Services */}
+          {/* =================================================
+              SERVICES
+          ================================================= */}
 
           <div>
-
-            <h3 className="mb-8 text-xl font-bold">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
               Services
             </h3>
 
-            <div className="space-y-4">
-
-              {services.map((item) => (
-
-                <div
-                  key={item}
-                  className="text-slate-400"
+            <div className="mt-6 space-y-3.5">
+              {services.map((service) => (
+                <Link
+                  key={service}
+                  href="/services"
+                  className="block text-sm leading-5 text-slate-400 transition-colors duration-200 hover:text-white"
                 >
-                  {item}
+                  {service}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* =================================================
+              CONTACT
+          ================================================= */}
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+              Get In Touch
+            </h3>
+
+            <div className="mt-6 space-y-4">
+
+              {/* Email */}
+              <a
+                href="mailto:rishabhgoko@gmail.com"
+                className="group flex items-start gap-3.5"
+              >
+                <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400">
+                  <Mail size={17} />
                 </div>
 
-              ))}
+                <div className="min-w-0">
+                  <span className="block text-xs text-slate-500">
+                    Email
+                  </span>
+
+                  <span className="mt-0.5 block break-all text-sm text-slate-300 transition-colors group-hover:text-white">
+                    rishabhgoko@gmail.com
+                  </span>
+                </div>
+              </a>
+
+              {/* Primary Phone */}
+              <a
+                href="tel:+917311170851"
+                className="group flex items-start gap-3.5"
+              >
+                <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                  <Phone size={17} />
+                </div>
+
+                <div>
+                  <span className="block text-xs text-slate-500">
+                    Phone
+                  </span>
+
+                  <span className="mt-0.5 block text-sm text-slate-300 transition-colors group-hover:text-white">
+                    +91 73111 70851
+                  </span>
+                </div>
+              </a>
+
+              {/* Alternative Phone */}
+              <a
+                href="tel:+917311176537"
+                className="group flex items-start gap-3.5"
+              >
+                <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400">
+                  <Phone size={17} />
+                </div>
+
+                <div>
+                  <span className="block text-xs text-slate-500">
+                    Alternative
+                  </span>
+
+                  <span className="mt-0.5 block text-sm text-slate-300 transition-colors group-hover:text-white">
+                    +91 73111 76537
+                  </span>
+                </div>
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3.5"
+              >
+                <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
+                  <MessageCircle size={17} />
+                </div>
+
+                <div>
+                  <span className="block text-xs text-slate-500">
+                    WhatsApp
+                  </span>
+
+                  <span className="mt-0.5 block text-sm text-slate-300 transition-colors group-hover:text-white">
+                    Start a conversation
+                  </span>
+                </div>
+              </a>
 
             </div>
 
+            {/* Hire Me */}
+            <Link
+              href="/contact"
+              className="btn-primary mt-7 inline-flex items-center justify-center gap-2"
+            >
+              Hire Me
+              <ArrowUpRight size={17} />
+            </Link>
           </div>
+        </div>
 
-          {/* Contact */}
+        {/* ===================================================
+            BOTTOM BAR
+        =================================================== */}
 
-          <div>
+        <div className="border-t border-white/10 py-7">
 
-            <h3 className="mb-8 text-xl font-bold">
-              Contact
-            </h3>
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
 
-            <div className="space-y-6">
+            {/* Copyright */}
+            <p className="text-center text-xs text-slate-500 md:text-left sm:text-sm">
+              © {new Date().getFullYear()} Grey Studio. All rights reserved.
+            </p>
 
-              <div className="flex gap-4">
+            {/* Legal */}
+            <div className="flex items-center justify-center gap-5 sm:gap-7">
 
-                <Mail
-                  className="mt-1 text-cyan-400"
-                  size={18}
-                />
+              <Link
+                href="/privacy"
+                className="text-xs text-slate-500 transition-colors hover:text-white sm:text-sm"
+              >
+                Privacy
+              </Link>
 
-                <span className="text-slate-400">
-                  rishabhgoko@gmail.com
-                </span>
-
-              </div>
-
-              <div className="flex gap-4">
-
-                <Phone
-                  className="mt-1 text-cyan-400"
-                  size={18}
-                />
-
-                <span className="text-slate-400">
-                  +91 7311170851
-                  +91 7311176537
-                </span>
-
-              </div>
-
-              <div className="flex gap-4">
-
-                <MapPin
-                  className="mt-1 text-cyan-400"
-                  size={18}
-                />
-
-                <span className="text-slate-400">
-                  India
-                </span>
-
-              </div>
+              <Link
+                href="/terms"
+                className="text-xs text-slate-500 transition-colors hover:text-white sm:text-sm"
+              >
+                Terms
+              </Link>
 
               <Link
                 href="/contact"
-                className="btn-primary mt-6 inline-flex items-center gap-3"
+                className="text-xs text-slate-500 transition-colors hover:text-white sm:text-sm"
               >
-
-                Hire Me
-
-                <ArrowUpRight size={18} />
-
+                Contact
               </Link>
 
             </div>
-
           </div>
-
-        </div>
-
-        {/* Bottom */}
-
-        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 py-8 md:flex-row">
-
-          <p className="text-sm text-slate-500">
-
-            © {new Date().getFullYear()} Grey Studio.
-            All Rights Reserved.
-
-          </p>
-
-          <div className="flex gap-8">
-
-            <Link
-              href="/privacy"
-              className="text-sm text-slate-500 hover:text-white"
-            >
-              Privacy
-            </Link>
-
-            <Link
-              href="/terms"
-              className="text-sm text-slate-500 hover:text-white"
-            >
-              Terms
-            </Link>
-
-            <Link
-              href="/contact"
-              className="text-sm text-slate-500 hover:text-white"
-            >
-              Contact
-            </Link>
-
-          </div>
-
         </div>
 
       </div>
-
     </footer>
   );
 }
