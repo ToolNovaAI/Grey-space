@@ -228,7 +228,7 @@ export const projects = [
 
     githubUrl: "#",
 
-    featured: false,
+    featured: true,
 
     icon: Globe,
 
