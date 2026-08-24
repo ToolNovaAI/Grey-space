@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -36,9 +36,6 @@ export default function Reveal({
       }}
     >
       {children}
-    </motion.div>
-  );
-}      {children}
     </motion.div>
   );
 }
