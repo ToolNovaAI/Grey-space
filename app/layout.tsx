@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CursorEffect from "@/components/animations/CursorEffect";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -142,6 +143,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} bg-[#050816] text-white antialiased`}
       >
+        {/* Global Cursor Effect */}
+        <CursorEffect />
+
         {/* Navigation */}
         <Navbar />
 
