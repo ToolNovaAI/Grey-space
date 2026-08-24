@@ -1,4 +1,4 @@
-import { Vimport type { Variants } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 /* -------------------------------------------------------------------------- */
 /*                                  EASING                                    */
@@ -31,13 +31,12 @@ export const fadeIn: Variants = {
 export const slideUp: Variants = {
   hidden: {
     opacity: 0,
-    y: 36,
+    y: 50,
   },
 
   visible: {
     opacity: 1,
     y: 0,
-
     transition: {
       duration: 0.7,
       ease,
@@ -52,13 +51,12 @@ export const slideUp: Variants = {
 export const slideDown: Variants = {
   hidden: {
     opacity: 0,
-    y: -36,
+    y: -40,
   },
 
   visible: {
     opacity: 1,
     y: 0,
-
     transition: {
       duration: 0.7,
       ease,
@@ -73,13 +71,12 @@ export const slideDown: Variants = {
 export const slideLeft: Variants = {
   hidden: {
     opacity: 0,
-    x: 40,
+    x: 50,
   },
 
   visible: {
     opacity: 1,
     x: 0,
-
     transition: {
       duration: 0.7,
       ease,
@@ -94,13 +91,12 @@ export const slideLeft: Variants = {
 export const slideRight: Variants = {
   hidden: {
     opacity: 0,
-    x: -40,
+    x: -50,
   },
 
   visible: {
     opacity: 1,
     x: 0,
-
     transition: {
       duration: 0.7,
       ease,
@@ -115,13 +111,12 @@ export const slideRight: Variants = {
 export const scaleUp: Variants = {
   hidden: {
     opacity: 0,
-    scale: 0.94,
+    scale: 0.9,
   },
 
   visible: {
     opacity: 1,
     scale: 1,
-
     transition: {
       duration: 0.6,
       ease,
@@ -138,8 +133,8 @@ export const staggerContainer: Variants = {
 
   visible: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.08,
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
     },
   },
 };
@@ -154,7 +149,7 @@ export const floatingAnimation = {
   transition: {
     duration: 4,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,
   },
 };
 
@@ -163,27 +158,27 @@ export const floatingAnimation = {
 /* -------------------------------------------------------------------------- */
 
 export const rotateAnimation = {
-  rotate: [0, 5, 0, -5, 0],
+  rotate: [0, 6, 0, -6, 0],
 
   transition: {
     duration: 6,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,
   },
 };
 
 /* -------------------------------------------------------------------------- */
-/*                                GLOW                                        */
+/*                                  GLOW                                      */
 /* -------------------------------------------------------------------------- */
 
 export const glowAnimation = {
   opacity: [0.6, 1, 0.6],
-  scale: [1, 1.04, 1],
+  scale: [1, 1.05, 1],
 
   transition: {
     duration: 3,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,
   },
 };
 
@@ -196,12 +191,11 @@ export const hoverScale = {
 
   transition: {
     duration: 0.25,
-    ease,
   },
 };
 
 /* -------------------------------------------------------------------------- */
-/*                            BUTTON TAP                                      */
+/*                              BUTTON TAP                                    */
 /* -------------------------------------------------------------------------- */
 
 export const tapScale = {
