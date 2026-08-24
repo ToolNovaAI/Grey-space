@@ -10,107 +10,221 @@ import Floating from "@/components/animations/Floating";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Animated Background */}
+    <section className="relative isolate overflow-hidden">
+      {/* =====================================================
+          BACKGROUND
+      ===================================================== */}
+
       <HeroBackground />
 
       {/* Decorative Gradient Blobs */}
-      <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-cyan-500/10 blur-[140px]" />
-      <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-violet-500/10 blur-[160px]" />
-      <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px]" />
+      <div className="pointer-events-none absolute left-[-160px] top-24 -z-10 h-72 w-72 rounded-full bg-cyan-500/10 blur-[130px] sm:h-80 sm:w-80" />
 
-      <div className="container-custom relative z-10 flex min-h-screen items-center py-24">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* Left Side */}
-          <div>
+      <div className="pointer-events-none absolute right-[-180px] top-32 -z-10 h-80 w-80 rounded-full bg-violet-500/10 blur-[140px] sm:h-96 sm:w-96" />
+
+      <div className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px]" />
+
+      {/* =====================================================
+          MAIN HERO
+      ===================================================== */}
+
+      <div className="container-custom relative z-10">
+
+        <div
+          className="
+            grid
+            min-h-[calc(100svh-76px)]
+            items-center
+            gap-14
+            py-28
+            sm:py-32
+            lg:min-h-screen
+            lg:grid-cols-[1.05fr_0.95fr]
+            lg:gap-14
+            lg:py-28
+            xl:gap-20
+          "
+        >
+
+          {/* =================================================
+              LEFT CONTENT
+          ================================================= */}
+
+          <div className="min-w-0">
+
             <Reveal>
               <HeroContent />
             </Reveal>
 
             <FadeIn delay={0.2}>
-              <HeroStats />
+              <div className="mt-10 sm:mt-12">
+                <HeroStats />
+              </div>
             </FadeIn>
+
           </div>
 
-          {/* Right Side */}
-          <Floating duration={5} distance={14}>
-            <div className="relative">
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-cyan-500/20 via-violet-500/20 to-blue-500/20 blur-3xl" />
+          {/* =================================================
+              RIGHT VISUAL
+          ================================================= */}
 
-              {/* Browser Mockup */}
-              <div className="glass relative overflow-hidden rounded-[32px] border border-white/10 shadow-2xl">
-                {/* Browser Header */}
-                <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-6 py-4">
-                  <div className="h-3 w-3 rounded-full bg-red-500" />
-                  <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                  <div className="h-3 w-3 rounded-full bg-green-500" />
+          <div className="relative mx-auto w-full max-w-[620px] lg:mx-0 lg:max-w-none">
 
-                  <div className="ml-6 flex-1 rounded-full bg-white/5 px-4 py-2 text-center text-xs text-slate-400">
-                    toolnovaai.vercel.app
-                  </div>
-                </div>
+            <Floating
+              duration={5}
+              distance={10}
+            >
+              <div className="relative px-3 py-6 sm:px-6 lg:px-0 lg:py-10">
 
-                {/* Preview */}
-                <div className="relative flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-[#0B1220] via-[#111827] to-[#050816]">
-                  <div className="text-center">
-                    <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-cyan-500 via-blue-500 to-violet-500 text-4xl font-bold text-white shadow-xl">
-                      T
+                {/* Main Glow */}
+                <div className="pointer-events-none absolute inset-[8%] rounded-[40px] bg-gradient-to-br from-cyan-500/20 via-violet-500/20 to-blue-500/20 blur-[70px]" />
+
+                {/* =================================================
+                    BROWSER MOCKUP
+                ================================================= */}
+
+                <div className="glass relative overflow-hidden rounded-[24px] border border-white/10 shadow-2xl shadow-black/30 sm:rounded-[30px]">
+
+                  {/* Browser Header */}
+                  <div className="flex h-12 items-center gap-2 border-b border-white/10 bg-white/[0.035] px-4 sm:h-14 sm:px-5">
+
+                    {/* Browser dots */}
+                    <div className="flex shrink-0 items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-red-400 sm:h-3 sm:w-3" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-400 sm:h-3 sm:w-3" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-400 sm:h-3 sm:w-3" />
                     </div>
 
-                    <h3 className="text-3xl font-bold text-white">
-                      ToolNovaAI
-                    </h3>
+                    {/* Address Bar */}
+                    <div className="ml-2 min-w-0 flex-1 rounded-full border border-white/5 bg-white/[0.04] px-3 py-1.5 text-center text-[9px] text-slate-500 sm:ml-4 sm:px-4 sm:py-2 sm:text-[11px]">
+                      toolnovaai.vercel.app
+                    </div>
 
-                    <p className="mt-3 text-slate-400">
-                      SEO • GEO • AEO Workspace
-                    </p>
+                  </div>
+
+                  {/* =================================================
+                      WEBSITE PREVIEW
+                  ================================================= */}
+
+                  <div
+                    className="
+                      relative
+                      flex
+                      aspect-[16/10]
+                      items-center
+                      justify-center
+                      overflow-hidden
+                      bg-gradient-to-br
+                      from-[#0B1220]
+                      via-[#111827]
+                      to-[#050816]
+                      px-5
+                    "
+                  >
+
+                    {/* Preview glow */}
+                    <div className="pointer-events-none absolute h-40 w-40 rounded-full bg-blue-500/20 blur-[70px]" />
+
+                    <div className="relative z-10 text-center">
+
+                      {/* ToolNova Icon */}
+                      <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 via-blue-500 to-violet-500 text-2xl font-bold text-white shadow-xl shadow-blue-500/20 sm:mb-5 sm:h-20 sm:w-20 sm:rounded-3xl sm:text-3xl lg:h-24 lg:w-24 lg:text-4xl">
+                        T
+                      </div>
+
+                      <h3 className="text-xl font-bold text-white sm:text-2xl lg:text-3xl">
+                        ToolNovaAI
+                      </h3>
+
+                      <p className="mt-2 text-xs text-slate-400 sm:mt-3 sm:text-sm">
+                        SEO • GEO • AEO Workspace
+                      </p>
+
+                    </div>
+
+                    {/* Small SEO indicator */}
+                    <div className="absolute bottom-4 right-4 hidden rounded-xl border border-violet-400/20 bg-violet-500/10 px-3 py-2 backdrop-blur-xl sm:block">
+                      <div className="text-sm font-bold text-violet-300">
+                        SEO
+                      </div>
+
+                      <div className="text-[10px] text-slate-500">
+                        Optimized
+                      </div>
+                    </div>
+
                   </div>
                 </div>
+
+                {/* =================================================
+                    PROJECTS BADGE
+                ================================================= */}
+
+                <Floating
+                  duration={3.5}
+                  delay={0.5}
+                  distance={8}
+                >
+                  <div className="glass absolute left-0 top-5 rounded-2xl border border-white/10 px-4 py-3 shadow-xl sm:left-0 sm:top-8 sm:px-5 sm:py-4 lg:-left-7">
+
+                    <div className="text-2xl font-bold text-cyan-400 sm:text-3xl">
+                      20+
+                    </div>
+
+                    <div className="mt-0.5 text-xs text-slate-400 sm:text-sm">
+                      Projects
+                    </div>
+
+                  </div>
+                </Floating>
+
+                {/* =================================================
+                    SEO BADGE
+                ================================================= */}
+
+                <Floating
+                  duration={4.5}
+                  delay={1}
+                  distance={12}
+                >
+                  <div className="glass absolute bottom-5 right-0 rounded-2xl border border-white/10 px-4 py-3 shadow-xl sm:bottom-8 sm:right-0 sm:px-5 sm:py-4 lg:-right-7">
+
+                    <div className="text-2xl font-bold text-violet-400 sm:text-3xl">
+                      SEO
+                    </div>
+
+                    <div className="mt-0.5 text-xs text-slate-400 sm:text-sm">
+                      Optimized
+                    </div>
+
+                  </div>
+                </Floating>
+
               </div>
+            </Floating>
+          </div>
 
-              {/* Floating Badge */}
-              <Floating duration={3.5} delay={0.5} distance={10}>
-                <div className="glass absolute -left-8 top-10 rounded-2xl p-5">
-                  <div className="text-3xl font-bold text-cyan-400">
-                    20+
-                  </div>
-
-                  <div className="mt-1 text-sm text-slate-400">
-                    Projects
-                  </div>
-                </div>
-              </Floating>
-
-              {/* Floating Badge */}
-              <Floating duration={4.5} delay={1} distance={16}>
-                <div className="glass absolute -right-8 bottom-12 rounded-2xl p-5">
-                  <div className="text-3xl font-bold text-violet-400">
-                    SEO
-                  </div>
-
-                  <div className="mt-1 text-sm text-slate-400">
-                    Optimized
-                  </div>
-                </div>
-              </Floating>
-            </div>
-          </Floating>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-xs uppercase tracking-[0.3em] text-slate-500">
+      {/* =====================================================
+          SCROLL INDICATOR
+      ===================================================== */}
+
+      <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:block">
+        <div className="flex flex-col items-center gap-2">
+
+          <span className="text-[10px] font-medium uppercase tracking-[0.35em] text-slate-600">
             Scroll
           </span>
 
-          <div className="h-14 w-8 rounded-full border border-white/20 p-1">
-            <div className="mx-auto h-3 w-3 animate-bounce rounded-full bg-cyan-400" />
+          <div className="flex h-11 w-6 justify-center rounded-full border border-white/10 p-1.5">
+            <div className="h-2 w-2 animate-bounce rounded-full bg-cyan-400" />
           </div>
+
         </div>
       </div>
+
     </section>
   );
 }
