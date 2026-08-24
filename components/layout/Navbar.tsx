@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <>
       {/* =====================================================
-          DESKTOP / MOBILE NAVBAR
+          NAVBAR
       ===================================================== */}
 
       <header
@@ -67,13 +67,13 @@ export default function Navbar() {
 
             <Link
               href="/"
-              aria-label="Grey Studio Home"
+              aria-label="Grey Space Home"
               className="group flex shrink-0 items-center gap-3"
             >
               <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
                 <Image
                   src="/images/Grey.png"
-                  alt="Grey Studio"
+                  alt="Grey Space"
                   fill
                   priority
                   sizes="48px"
@@ -83,7 +83,7 @@ export default function Navbar() {
 
               <div className="hidden sm:block">
                 <h1 className="text-[17px] font-bold leading-none tracking-tight text-white md:text-lg">
-                  Grey Studio
+                  Grey Space
                 </h1>
 
                 <p className="mt-1 text-[11px] leading-none text-slate-400">
@@ -104,10 +104,11 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative py-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
+                  className="group relative py-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
                 >
                   {item.name}
 
+                  {/* Animated underline */}
                   <span className="absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 bg-gradient-to-r from-blue-400 via-violet-400 to-cyan-400 transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}
@@ -164,7 +165,9 @@ export default function Navbar() {
         }`}
         aria-hidden={!mobileOpen}
       >
+
         {/* Backdrop */}
+
         <button
           type="button"
           aria-label="Close navigation menu"
@@ -177,6 +180,7 @@ export default function Navbar() {
         />
 
         {/* Drawer */}
+
         <aside
           className={`absolute right-0 top-0 flex h-full w-[min(88vw,380px)] flex-col border-l border-white/10 bg-[#080d1c] shadow-2xl shadow-black/40 transition-transform duration-300 ${
             mobileOpen
@@ -184,27 +188,32 @@ export default function Navbar() {
               : "translate-x-full"
           }`}
         >
-          {/* Drawer Header */}
+
+          {/* =================================================
+              DRAWER HEADER
+          ================================================= */}
+
           <div className="flex h-[76px] shrink-0 items-center justify-between border-b border-white/10 px-5">
 
             <Link
               href="/"
               onClick={closeMobileMenu}
-              className="flex items-center gap-3"
+              aria-label="Grey Space Home"
+              className="group flex items-center gap-3"
             >
               <div className="relative h-10 w-10 shrink-0">
                 <Image
                   src="/images/Grey.png"
-                  alt="Grey Studio"
+                  alt="Grey Space"
                   fill
                   sizes="40px"
-                  className="object-contain"
+                  className="object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
               <div>
                 <p className="text-base font-bold leading-none text-white">
-                  Grey Studio
+                  Grey Space
                 </p>
 
                 <p className="mt-1 text-[10px] text-slate-500">
@@ -223,31 +232,41 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Drawer Navigation */}
+          {/* =================================================
+              MOBILE NAVIGATION
+          ================================================= */}
+
           <nav
             aria-label="Mobile navigation"
             className="flex flex-1 flex-col px-5 py-7"
           >
+
             <div className="space-y-2">
+
               {links.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={closeMobileMenu}
-                  className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-medium text-slate-300 transition-all duration-200 hover:bg-white/[0.05] hover:text-white"
+                  className="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-medium text-slate-300 transition-all duration-200 hover:bg-white/[0.05] hover:text-white"
                 >
                   {item.name}
 
                   <ArrowUpRight
                     size={17}
-                    className="text-slate-600 transition-colors group-hover:text-white"
+                    className="text-slate-600 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
                   />
                 </Link>
               ))}
+
             </div>
 
-            {/* Mobile CTA */}
+            {/* =================================================
+                MOBILE CTA
+            ================================================= */}
+
             <div className="mt-auto border-t border-white/10 pt-6">
+
               <p className="mb-3 px-1 text-xs uppercase tracking-[0.18em] text-slate-500">
                 Ready to start?
               </p>
@@ -260,6 +279,7 @@ export default function Navbar() {
                 Start Your Project
                 <ArrowUpRight size={18} />
               </Link>
+
             </div>
           </nav>
         </aside>
