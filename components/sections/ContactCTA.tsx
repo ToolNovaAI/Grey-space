@@ -60,10 +60,10 @@ export default function ContactCTA() {
               your business grow.
             </p>
 
-            {/* Buttons */}
+            {/* Action Buttons */}
             <div className="mt-14 flex flex-wrap items-center justify-center gap-5">
 
-              {/* Contact */}
+              {/* Start Project */}
               <Link
                 href="/contact"
                 className="btn-primary inline-flex items-center justify-center gap-3"
@@ -93,8 +93,10 @@ export default function ContactCTA() {
               </a>
             </div>
 
-            {/* Contact Details */}
+            {/* Contact Information */}
             <div className="mt-10 flex flex-col items-center justify-center gap-3 text-sm text-slate-400 sm:flex-row sm:gap-6">
+
+              {/* Email */}
               <a
                 href="mailto:rishabhgoko@gmail.com"
                 className="transition-colors hover:text-white"
@@ -106,6 +108,7 @@ export default function ContactCTA() {
                 •
               </span>
 
+              {/* Primary Phone */}
               <a
                 href="tel:+917311170851"
                 className="inline-flex items-center gap-2 transition-colors hover:text-white"
@@ -118,6 +121,7 @@ export default function ContactCTA() {
                 •
               </span>
 
+              {/* Alternative Phone */}
               <a
                 href="tel:+917311176537"
                 className="transition-colors hover:text-white"
@@ -126,7 +130,7 @@ export default function ContactCTA() {
               </a>
             </div>
 
-            {/* Bottom Grid */}
+            {/* Bottom Feature Cards */}
             <div className="mt-16 grid w-full gap-6 md:grid-cols-3">
 
               {/* Fast Response */}
