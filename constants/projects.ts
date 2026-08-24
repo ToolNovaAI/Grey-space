@@ -2,6 +2,8 @@ import {
   Sparkles,
   Globe,
   Briefcase,
+  Megaphone,
+  Bike,
 } from "lucide-react";
 
 export const projects = [
@@ -49,16 +51,16 @@ export const projects = [
   {
     id: 2,
 
-    title: "Grey Portfolio",
+    title: "Grey Space",
 
-    slug: "grey-portfolio",
+    slug: "grey-space",
 
     category: "Personal Portfolio",
 
     description:
-      "Modern portfolio showcasing website development, UI/UX design, automation, SEO and digital marketing expertise with premium design.",
+      "A premium personal portfolio and digital growth website showcasing website development, SEO, Google Ads, Meta Ads, AI automation and digital marketing expertise.",
 
-    liveUrl: "https://grey-zen.github.io",
+    liveUrl: "https://grey-space.vercel.app",
 
     githubUrl: "#",
 
@@ -67,18 +69,19 @@ export const projects = [
     icon: Globe,
 
     technologies: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Responsive Design",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
       "SEO",
     ],
 
     highlights: [
-      "Modern UI",
+      "Premium UI/UX",
       "Responsive",
-      "Portfolio",
       "Animations",
+      "SEO Ready",
+      "Digital Growth",
     ],
 
     gradient:
@@ -123,6 +126,89 @@ export const projects = [
 
     gradient:
       "from-emerald-500 via-green-500 to-teal-500",
+  },
+
+  {
+    id: 4,
+
+    title: "The Media Buddy",
+
+    slug: "the-media-buddy",
+
+    category: "Digital Marketing & Technology",
+
+    description:
+      "A modern digital marketing and technology website designed to showcase web development, SEO, advertising, automation and digital growth solutions for businesses.",
+
+    liveUrl:
+      "https://the-media-buddy.vercel.app",
+
+    githubUrl: "#",
+
+    featured: true,
+
+    icon: Megaphone,
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "SEO",
+      "Digital Marketing",
+      "Vercel",
+    ],
+
+    highlights: [
+      "Premium UI/UX",
+      "Digital Marketing",
+      "SEO Ready",
+      "Responsive",
+      "Business Growth",
+    ],
+
+    gradient:
+      "from-violet-500 via-fuchsia-500 to-pink-500",
+  },
+
+  {
+    id: 5,
+
+    title: "Moto旅",
+
+    slug: "mototabi",
+
+    category: "Motorcycle Magazine",
+
+    description:
+      "A premium Japanese motorcycle magazine website featuring motorcycle reviews, touring destinations, maintenance content, news and an editorial-focused digital experience.",
+
+    liveUrl:
+      "https://motover.vercel.app/index.html",
+
+    githubUrl: "#",
+
+    featured: true,
+
+    icon: Bike,
+
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Responsive Design",
+      "SEO",
+    ],
+
+    highlights: [
+      "Japanese UX",
+      "Editorial Design",
+      "Responsive",
+      "Motorcycle Content",
+      "Premium Experience",
+    ],
+
+    gradient:
+      "from-orange-500 via-red-500 to-rose-600",
   },
 ];
 
