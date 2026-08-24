@@ -14,18 +14,21 @@ export default function Services() {
       </div>
 
       <div className="container-custom">
+
         {/* Section Header */}
-        <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+        <div className="mx-auto mb-20 flex w-full max-w-3xl flex-col items-center text-center">
+          <span className="inline-flex items-center justify-center rounded-full border border-blue-500/20 bg-blue-500/10 px-5 py-2 text-center text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
             Services
           </span>
 
-          <h2 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
-            Complete Digital
-            <span className="gradient-text"> Growth Solutions</span>
+          <h2 className="mt-8 w-full text-center text-4xl font-bold leading-tight md:text-6xl">
+            Complete Digital{" "}
+            <span className="gradient-text">
+              Growth Solutions
+            </span>
           </h2>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+          <p className="mx-auto mt-8 w-full max-w-2xl text-center text-lg leading-8 text-slate-400">
             I help businesses build, market and grow their online presence
             through premium websites, SEO, paid advertising, AI automation and
             long-term technical support.
@@ -55,17 +58,17 @@ export default function Services() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mb-4 text-2xl font-bold text-white">
+                <h3 className="relative mb-4 text-2xl font-bold text-white">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="leading-8 text-slate-400">
+                <p className="relative leading-8 text-slate-400">
                   {service.description}
                 </p>
 
                 {/* CTA */}
-                <button className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
+                <button className="relative mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
                   Learn More
                   <ArrowUpRight size={18} />
                 </button>
@@ -75,19 +78,20 @@ export default function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <p className="mb-6 text-slate-400">
+        <div className="mt-20 flex flex-col items-center text-center">
+          <p className="mb-6 w-full text-center text-slate-400">
             Looking for a custom solution tailored to your business?
           </p>
 
           <a
             href="/contact"
-            className="btn-primary inline-flex items-center gap-3"
+            className="btn-primary inline-flex items-center justify-center gap-3"
           >
             Let's Discuss Your Project
             <ArrowUpRight size={18} />
           </a>
         </div>
+
       </div>
     </section>
   );
