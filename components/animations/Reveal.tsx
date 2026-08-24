@@ -1,7 +1,8 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+
 import {
   slideUp,
   viewport,
@@ -35,6 +36,9 @@ export default function Reveal({
       }}
     >
       {children}
+    </motion.div>
+  );
+}      {children}
     </motion.div>
   );
 }
