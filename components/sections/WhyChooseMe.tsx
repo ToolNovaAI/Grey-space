@@ -73,10 +73,10 @@ export default function WhyChooseMe() {
             </span>
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-400">
-            I help businesses build, market and grow online through
-            modern websites, digital marketing, automation and
-            long-term technical support.
+          <p className="mx-auto mt-5 max-w-2xl text-center text-slate-400">
+             Whether you need a modern website, SEO strategy,
+             advertising campaign or AI automation, I'm ready to help
+             your business grow.
           </p>
         </div>
 
