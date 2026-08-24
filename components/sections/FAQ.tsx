@@ -16,98 +16,187 @@ export default function FAQ() {
       id="faq"
       className="section relative overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-blue-500/10 blur-[120px]" />
-        <div className="absolute right-0 bottom-20 h-80 w-80 rounded-full bg-violet-500/10 blur-[120px]" />
+      {/* =====================================================
+          BACKGROUND GLOW
+      ===================================================== */}
+
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-[-180px] top-20 h-80 w-80 rounded-full bg-blue-500/[0.07] blur-[120px]" />
+
+        <div className="absolute right-[-180px] bottom-20 h-80 w-80 rounded-full bg-violet-500/[0.07] blur-[120px]" />
+
+        <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/[0.04] blur-[120px]" />
       </div>
 
       <div className="container-custom">
 
-        {/* Heading */}
+        {/* =====================================================
+            SECTION HEADER
+        ===================================================== */}
 
-        <div className="mx-auto mb-20 max-w-3xl text-center">
+        <div className="mx-auto mb-12 flex w-full max-w-3xl flex-col items-center text-center sm:mb-16 lg:mb-20">
 
-          <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
+          {/* Badge */}
+          <span className="inline-flex items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-400 sm:px-5 sm:text-sm">
             FAQ
           </span>
 
-          <h2 className="mt-6 text-4xl font-bold md:text-6xl">
-            Frequently Asked
+          {/* Heading */}
+          <h2 className="mt-6 text-center text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl">
+            Frequently Asked{" "}
             <span className="gradient-text">
-              {" "}Questions
+              Questions
             </span>
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-400">
-            Answers to the questions I receive most often from
-            businesses before starting a new project.
+          {/* Description */}
+          <p className="mx-auto mt-5 w-full max-w-2xl text-center text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
+            Answers to the questions I receive most often from businesses
+            before starting a new project.
           </p>
-
         </div>
 
-        {/* Accordion */}
+        {/* =====================================================
+            FAQ ACCORDION
+        ===================================================== */}
 
-        <div className="mx-auto max-w-4xl space-y-6">
+        <div className="mx-auto w-full max-w-4xl space-y-3 sm:space-y-4">
 
           {faq.map((item) => {
-
             const isOpen = openId === item.id;
 
             return (
-
               <div
                 key={item.id}
-                className="glass overflow-hidden rounded-3xl"
+                className={`
+                  glass
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  transition-all
+                  duration-300
+                  sm:rounded-3xl
+                  ${
+                    isOpen
+                      ? "border-white/15 bg-white/[0.045]"
+                      : "border-white/10"
+                  }
+                `}
               >
-
+                {/* Question */}
                 <button
+                  type="button"
                   onClick={() => toggle(item.id)}
-                  className="flex w-full items-center justify-between p-8 text-left transition hover:bg-white/5"
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${item.id}`}
+                  className="
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+                    gap-4
+                    px-5
+                    py-5
+                    text-left
+                    transition-colors
+                    duration-300
+                    hover:bg-white/[0.035]
+                    sm:px-7
+                    sm:py-6
+                  "
                 >
-
-                  <h3 className="pr-6 text-xl font-semibold text-white">
+                  {/* Question Text */}
+                  <span
+                    className={`
+                      min-w-0
+                      pr-2
+                      text-base
+                      font-semibold
+                      leading-6
+                      transition-colors
+                      duration-300
+                      sm:text-lg
+                      sm:leading-7
+                      ${
+                        isOpen
+                          ? "text-white"
+                          : "text-slate-200"
+                      }
+                    `}
+                  >
                     {item.question}
-                  </h3>
+                  </span>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5">
-
+                  {/* Toggle Icon */}
+                  <span
+                    className={`
+                      flex
+                      h-9
+                      w-9
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      transition-all
+                      duration-300
+                      sm:h-10
+                      sm:w-10
+                      ${
+                        isOpen
+                          ? "border-cyan-400/20 bg-cyan-400/10 text-cyan-400"
+                          : "border-white/10 bg-white/[0.04] text-slate-400"
+                      }
+                    `}
+                  >
                     {isOpen ? (
-                      <Minus size={22} />
+                      <Minus size={18} />
                     ) : (
-                      <Plus size={22} />
+                      <Plus size={18} />
                     )}
-
-                  </div>
-
+                  </span>
                 </button>
 
+                {/* Answer */}
                 <div
-                  className={`grid transition-all duration-500 ${
-                    isOpen
-                      ? "grid-rows-[1fr]"
-                      : "grid-rows-[0fr]"
-                  }`}
+                  id={`faq-answer-${item.id}`}
+                  className={`
+                    grid
+                    transition-[grid-template-rows]
+                    duration-500
+                    ease-in-out
+                    ${
+                      isOpen
+                        ? "grid-rows-[1fr]"
+                        : "grid-rows-[0fr]"
+                    }
+                  `}
                 >
-
-                  <div className="overflow-hidden">
-
-                    <div className="px-8 pb-8 text-slate-400 leading-8">
-
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="border-t border-white/5 px-5 pb-5 pt-4 text-sm leading-7 text-slate-400 sm:px-7 sm:pb-7 sm:pt-5 sm:text-base sm:leading-8">
                       {item.answer}
-
                     </div>
-
                   </div>
-
                 </div>
-
               </div>
-
             );
-
           })}
+        </div>
 
+        {/* =====================================================
+            BOTTOM NOTE
+        ===================================================== */}
+
+        <div className="mx-auto mt-10 max-w-4xl text-center sm:mt-12">
+          <p className="text-sm text-slate-500">
+            Still have a question?{" "}
+            <a
+              href="/contact"
+              className="font-medium text-cyan-400 transition-colors hover:text-cyan-300"
+            >
+              Let's talk about your project.
+            </a>
+          </p>
         </div>
 
       </div>
