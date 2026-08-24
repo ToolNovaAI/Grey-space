@@ -194,7 +194,7 @@ export default function Footer() {
                 />
 
                 <span className="text-slate-400">
-                  your@email.com
+                  rishabhgoko@gmail.com
                 </span>
 
               </div>
@@ -207,7 +207,8 @@ export default function Footer() {
                 />
 
                 <span className="text-slate-400">
-                  +91 XXXXX XXXXX
+                  +91 7311170851
+                  +91 7311176537
                 </span>
 
               </div>
