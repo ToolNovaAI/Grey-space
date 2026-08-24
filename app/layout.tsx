@@ -19,29 +19,30 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://grey-zen.github.io"),
 
   title: {
-    default: "Grey Studio | Website Developer & Digital Growth Specialist",
-    template: "%s | Grey Studio",
+    default: "Grey Space | Website Developer & Digital Growth Specialist",
+    template: "%s | Grey Space",
   },
 
   description:
-    "Premium Website Development, SEO, Google Ads, Meta Ads, AI Automation and Digital Marketing services for businesses that want to grow online.",
+    "Grey Space helps businesses grow online through premium website development, SEO, Google Ads, Meta Ads, AI automation and digital marketing.",
 
   keywords: [
+    "Grey Space",
     "Website Developer",
     "Web Designer",
-    "Next.js",
-    "React",
-    "WordPress",
+    "Next.js Developer",
+    "React Developer",
+    "WordPress Developer",
     "SEO",
     "Google Ads",
     "Meta Ads",
     "AI Automation",
     "Digital Marketing",
     "Business Website",
-    "Portfolio",
+    "Website Development",
   ],
 
   authors: [
@@ -52,41 +53,79 @@ export const metadata: Metadata = {
 
   creator: "Grey",
 
-  publisher: "Grey Studio",
+  publisher: "Grey Space",
+
+  applicationName: "Grey Space",
+
+  category: "technology",
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://grey-zen.github.io",
   },
 
   openGraph: {
-    title: "Grey Studio",
+    title: "Grey Space | Website Developer & Digital Growth Specialist",
 
     description:
-      "Premium Website Development, SEO, Google Ads, Meta Ads and AI Automation.",
+      "Premium website development, SEO, Google Ads, Meta Ads, AI automation and digital marketing for businesses that want to grow online.",
 
-    url: "https://your-domain.com",
+    url: "https://grey-zen.github.io",
 
-    siteName: "Grey Studio",
+    siteName: "Grey Space",
 
     locale: "en_US",
 
     type: "website",
+
+    images: [
+      {
+        url: "/images/Grey.png",
+        width: 588,
+        height: 581,
+        alt: "Grey Space",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
 
-    title: "Grey Studio",
+    title: "Grey Space | Website Developer & Digital Growth Specialist",
 
     description:
-      "Premium Website Development, SEO, Google Ads, Meta Ads and AI Automation.",
+      "Premium website development, SEO, Google Ads, Meta Ads, AI automation and digital marketing.",
+
+    images: ["/images/Grey.png"],
   },
 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [
+      {
+        url: "/images/Grey.png",
+        type: "image/png",
+      },
+    ],
+
+    shortcut: "/images/Grey.png",
+
+    apple: [
+      {
+        url: "/images/Grey.png",
+        type: "image/png",
+      },
+    ],
   },
 };
 
