@@ -60,9 +60,7 @@ export default function WhyChooseMe() {
       id="why-me"
       className="section relative overflow-hidden"
     >
-      {/* =====================================================
-          BACKGROUND GLOW
-      ===================================================== */}
+      {/* Background Glow */}
 
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-180px] top-20 h-80 w-80 rounded-full bg-blue-500/[0.07] blur-[130px]" />
@@ -74,18 +72,14 @@ export default function WhyChooseMe() {
 
       <div className="container-custom">
 
-        {/* =====================================================
-            SECTION HEADER
-        ===================================================== */}
+        {/* Section Header */}
 
         <div className="mx-auto mb-12 flex w-full max-w-3xl flex-col items-center text-center sm:mb-16 lg:mb-20">
 
-          {/* Badge */}
           <span className="inline-flex items-center justify-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-400 sm:px-5 sm:text-sm">
             Why Choose Me
           </span>
 
-          {/* Heading */}
           <h2 className="mt-6 w-full text-center text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl">
             More Than a{" "}
             <span className="gradient-text">
@@ -93,7 +87,6 @@ export default function WhyChooseMe() {
             </span>
           </h2>
 
-          {/* Description */}
           <p className="mx-auto mt-5 w-full max-w-2xl text-center text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
             Whether you need a modern website, SEO strategy,
             advertising campaign or AI automation, I'm ready to
@@ -101,9 +94,7 @@ export default function WhyChooseMe() {
           </p>
         </div>
 
-        {/* =====================================================
-            FEATURE GRID
-        ===================================================== */}
+        {/* Feature Grid */}
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
 
@@ -134,9 +125,7 @@ export default function WhyChooseMe() {
                 "
               >
 
-                {/* =================================================
-                    HOVER GLOW
-                ================================================= */}
+                {/* Hover Glow */}
 
                 <div
                   className={`
@@ -153,9 +142,7 @@ export default function WhyChooseMe() {
                   `}
                 />
 
-                {/* =================================================
-                    ICON
-                ================================================= */}
+                {/* Icon */}
 
                 <div
                   className={`
@@ -181,9 +168,7 @@ export default function WhyChooseMe() {
                   <Icon size={29} />
                 </div>
 
-                {/* =================================================
-                    CONTENT
-                ================================================= */}
+                {/* Content */}
 
                 <div className="relative">
 
@@ -197,9 +182,7 @@ export default function WhyChooseMe() {
 
                 </div>
 
-                {/* =================================================
-                    BOTTOM ACCENT
-                ================================================= */}
+                {/* Bottom Accent */}
 
                 <div className="relative mt-auto pt-7">
 
@@ -219,14 +202,14 @@ export default function WhyChooseMe() {
                   />
 
                 </div>
+
               </article>
             );
           })}
+
         </div>
 
-        {/* =====================================================
-            BOTTOM CTA
-        ===================================================== */}
+        {/* Bottom CTA */}
 
         <div className="mx-auto mt-12 flex w-full max-w-3xl flex-col items-center rounded-[28px] border border-white/10 bg-gradient-to-r from-blue-600/[0.08] via-violet-600/[0.08] to-cyan-600/[0.08] p-7 text-center backdrop-blur-xl sm:mt-16 sm:p-10">
 
@@ -248,105 +231,6 @@ export default function WhyChooseMe() {
             <ArrowUpRight size={18} />
           </Link>
 
-        </div>
-
-      </div>
-    </section>
-  );
-}    color: "from-violet-500 to-purple-500",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure & Scalable",
-    description:
-      "Modern development practices with secure architecture that grows alongside your business.",
-    color: "from-pink-500 to-red-500",
-  },
-  {
-    icon: Headphones,
-    title: "Long-Term Support",
-    description:
-      "I don't just launch websites—I provide ongoing updates, maintenance and technical support.",
-    color: "from-blue-500 to-indigo-500",
-  },
-];
-
-export default function WhyChooseMe() {
-  return (
-    <section
-      id="why-me"
-      className="section relative overflow-hidden"
-    >
-      <div className="container-custom">
-
-        {/* Header */}
-        <div className="mx-auto mb-20 flex w-full max-w-3xl flex-col items-center text-center">
-
-          <span className="inline-flex rounded-full border border-blue-500/20 bg-blue-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-            Why Choose Me
-          </span>
-
-          <h2 className="mt-6 text-center text-4xl font-bold md:text-6xl">
-            More Than a{" "}
-            <span className="gradient-text">
-              Website Developer
-            </span>
-          </h2>
-
-          <p className="mx-auto mt-5 w-full max-w-2xl text-center text-slate-400">
-            Whether you need a modern website, SEO strategy,
-            advertising campaign or AI automation, I'm ready to help
-            your business grow.
-          </p>
-        </div>
-
-        {/* Feature Cards */}
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {features.map((feature) => {
-            const Icon = feature.icon;
-
-            return (
-              <div
-                key={feature.title}
-                className="glass group rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3"
-              >
-                <div
-                  className={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.color} text-white shadow-lg`}
-                >
-                  <Icon size={30} />
-                </div>
-
-                <h3 className="mb-4 text-2xl font-bold text-white">
-                  {feature.title}
-                </h3>
-
-                <p className="leading-8 text-slate-400">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-20 flex flex-col items-center rounded-3xl border border-white/10 bg-gradient-to-r from-blue-600/10 via-violet-600/10 to-cyan-600/10 p-10 text-center backdrop-blur-xl">
-
-          <h3 className="text-center text-3xl font-bold text-white">
-            Let's Build Something Amazing Together
-          </h3>
-
-          <p className="mx-auto mt-5 w-full max-w-2xl text-center text-slate-400">
-            Whether you need a modern website, SEO strategy,
-            advertising campaign or AI automation, I'm ready to help
-            your business grow.
-          </p>
-
-          <a
-            href="/contact"
-            className="btn-primary mt-8 inline-flex items-center gap-3"
-          >
-            Start Your Project
-          </a>
         </div>
 
       </div>
