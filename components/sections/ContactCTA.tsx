@@ -19,7 +19,7 @@ const ALTERNATIVE_PHONE = "7311176537";
 const EMAIL = "rishabhgoko@gmail.com";
 
 const whatsappMessage = encodeURIComponent(
-  "Hi Grey, I visited your website and I'd like to discuss a project with you."
+  "Hi Grey, I visited your Grey Space website and I'd like to discuss a project with you."
 );
 
 const whatsappLink = `https://wa.me/91${PRIMARY_PHONE}?text=${whatsappMessage}`;
@@ -52,8 +52,10 @@ ${message}
 Thank you.`
     );
 
+    const projectWhatsappLink = `https://wa.me/91${PRIMARY_PHONE}?text=${text}`;
+
     window.open(
-      `https://wa.me/91${PRIMARY_PHONE}?text=${text}`,
+      projectWhatsappLink,
       "_blank",
       "noopener,noreferrer"
     );
@@ -67,7 +69,7 @@ Thank you.`
           BACKGROUND
       ===================================================== */}
 
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-180px] top-24 h-[420px] w-[420px] rounded-full bg-blue-600/10 blur-[140px]" />
 
         <div className="absolute right-[-180px] top-[35%] h-[420px] w-[420px] rounded-full bg-violet-600/10 blur-[140px]" />
@@ -76,7 +78,7 @@ Thank you.`
       </div>
 
       {/* =====================================================
-          HERO / PAGE HEADER
+          PAGE HEADER
       ===================================================== */}
 
       <section className="px-4 pb-14 pt-28 sm:px-6 md:pb-20 md:pt-36">
@@ -96,7 +98,7 @@ Thank you.`
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-center text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
               Let's Build Something{" "}
               <span className="gradient-text">
                 Great Together.
@@ -128,8 +130,9 @@ Thank you.`
 
             <div className="glass rounded-[28px] border border-white/10 p-6 sm:p-8 md:p-10">
 
+              {/* Form Header */}
               <div className="mb-8">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-violet-500 text-white shadow-lg shadow-blue-500/20">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-violet-500 text-white shadow-lg shadow-blue-500/20">
                   <Send size={20} />
                 </div>
 
@@ -162,6 +165,7 @@ Thank you.`
                     name="name"
                     type="text"
                     required
+                    autoComplete="name"
                     placeholder="Enter your name"
                     className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500/50 focus:bg-white/[0.06] focus:ring-4 focus:ring-blue-500/10"
                   />
@@ -181,7 +185,8 @@ Thank you.`
                     name="email"
                     type="email"
                     required
-                    placeholder="rishabhgoko@gmail.com"
+                    autoComplete="email"
+                    placeholder="Your email address"
                     className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500/50 focus:bg-white/[0.06] focus:ring-4 focus:ring-blue-500/10"
                   />
                 </div>
@@ -280,7 +285,7 @@ Thank you.`
                   />
                 </div>
 
-                {/* Success */}
+                {/* Success Message */}
                 {submitted && (
                   <div className="flex items-start gap-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4 text-sm text-emerald-300">
                     <CheckCircle2
@@ -346,7 +351,6 @@ Thank you.`
 
               {/* Phone */}
               <div className="glass rounded-[24px] border border-white/10 p-6">
-
                 <div className="flex items-start gap-5">
 
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400">
@@ -411,9 +415,8 @@ Thank you.`
                 </div>
               </a>
 
-              {/* Availability */}
+              {/* Response Time */}
               <div className="glass rounded-[24px] border border-white/10 p-6">
-
                 <div className="flex items-start gap-5">
 
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-400">
@@ -436,9 +439,8 @@ Thank you.`
                 </div>
               </div>
 
-              {/* Location / Remote */}
+              {/* Work Availability */}
               <div className="glass rounded-[24px] border border-white/10 p-6">
-
                 <div className="flex items-start gap-5">
 
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400">
@@ -460,7 +462,6 @@ Thank you.`
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -484,13 +485,12 @@ Thank you.`
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary shrink-0"
+              className="btn-primary inline-flex shrink-0 items-center gap-2"
             >
               WhatsApp Me
               <MessageCircle size={18} />
             </a>
           </div>
-
         </div>
       </section>
 
@@ -507,6 +507,7 @@ Thank you.`
             size={16}
             className="rotate-180"
           />
+
           Back to Home
         </Link>
       </div>
