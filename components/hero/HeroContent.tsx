@@ -1,133 +1,191 @@
 "use client";
 
 import HeroButtons from "./HeroButtons";
-import { BadgeCheck, Sparkles, Zap } from "lucide-react";
+import {
+  BadgeCheck,
+  Sparkles,
+  Zap,
+} from "lucide-react";
+
+const features = [
+  {
+    title: "Premium Website Development",
+  },
+  {
+    title: "SEO & Technical Optimization",
+  },
+  {
+    title: "Google & Meta Ads",
+  },
+  {
+    title: "AI Automation Solutions",
+  },
+];
+
+const trustItems = [
+  {
+    title: "Modern UI/UX",
+    icon: Sparkles,
+    color: "text-cyan-400",
+  },
+  {
+    title: "Fast Performance",
+    icon: Zap,
+    color: "text-yellow-400",
+  },
+  {
+    title: "SEO Ready",
+    icon: BadgeCheck,
+    color: "text-emerald-400",
+  },
+];
 
 export default function HeroContent() {
   return (
-    <div className="max-w-3xl">
+    <div className="w-full max-w-3xl">
 
-      {/* Status */}
+      {/* =====================================================
+          AVAILABILITY BADGE
+      ===================================================== */}
 
-      <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-3">
+      <div className="mb-6 inline-flex max-w-full items-center gap-2.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2.5 sm:mb-8 sm:gap-3 sm:px-5 sm:py-3">
+        <span className="relative flex h-2.5 w-2.5 shrink-0 sm:h-3 sm:w-3">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
 
-        <span className="relative flex h-3 w-3">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400"></span>
+          <span className="relative inline-flex h-full w-full rounded-full bg-emerald-400" />
         </span>
 
-        <span className="text-sm font-semibold text-emerald-300">
+        <span className="truncate text-xs font-semibold text-emerald-300 sm:text-sm">
           Available for New Projects
         </span>
-
       </div>
 
-      {/* Heading */}
+      {/* =====================================================
+          MAIN HEADING
+      ===================================================== */}
 
-      <h1 className="text-5xl font-black leading-[1.05] tracking-tight md:text-7xl xl:text-8xl">
-
-        I Build
-
+      <h1
+        className="
+          max-w-3xl
+          text-[2.75rem]
+          font-black
+          leading-[0.98]
+          tracking-[-0.045em]
+          text-white
+          sm:text-5xl
+          sm:leading-[1]
+          md:text-6xl
+          lg:text-7xl
+          xl:text-[5.25rem]
+          xl:leading-[0.98]
+        "
+      >
+        I Build{" "}
         <span className="gradient-text block">
           Premium Websites
-        </span>
-
+        </span>{" "}
         That Grow
-
         <span className="block">
           Businesses.
         </span>
-
       </h1>
 
-      {/* Description */}
+      {/* =====================================================
+          DESCRIPTION
+      ===================================================== */}
 
-      <p className="mt-10 max-w-2xl text-xl leading-9 text-slate-400">
-
+      <p
+        className="
+          mt-6
+          w-full
+          max-w-2xl
+          text-base
+          leading-7
+          text-slate-400
+          sm:mt-8
+          sm:text-lg
+          sm:leading-8
+          lg:text-xl
+          lg:leading-9
+        "
+      >
         I help startups, businesses and entrepreneurs create
         high-performance websites, improve SEO, run profitable
         Google & Meta Ads, automate workflows and build a
-        stronger online presence that turns visitors into customers.
-
+        stronger online presence that turns visitors into
+        customers.
       </p>
 
-      {/* Feature List */}
+      {/* =====================================================
+          FEATURE LIST
+      ===================================================== */}
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
+      <div className="mt-8 grid w-full max-w-2xl gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-4">
+        {features.map((feature) => (
+          <div
+            key={feature.title}
+            className="flex min-w-0 items-center gap-3"
+          >
+            <BadgeCheck
+              size={20}
+              className="shrink-0 text-cyan-400 sm:h-[22px] sm:w-[22px]"
+            />
 
-        <div className="flex items-center gap-4">
-          <BadgeCheck className="text-cyan-400" size={22} />
-
-          <span className="text-slate-300">
-            Premium Website Development
-          </span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <BadgeCheck className="text-cyan-400" size={22} />
-
-          <span className="text-slate-300">
-            SEO & Technical Optimization
-          </span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <BadgeCheck className="text-cyan-400" size={22} />
-
-          <span className="text-slate-300">
-            Google & Meta Ads
-          </span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <BadgeCheck className="text-cyan-400" size={22} />
-
-          <span className="text-slate-300">
-            AI Automation Solutions
-          </span>
-        </div>
-
+            <span className="text-sm leading-6 text-slate-300 sm:text-[15px]">
+              {feature.title}
+            </span>
+          </div>
+        ))}
       </div>
 
-      {/* Trust Cards */}
+      {/* =====================================================
+          TRUST ITEMS
+      ===================================================== */}
 
-      <div className="mt-14 flex flex-wrap gap-5">
+      <div className="mt-9 flex w-full max-w-2xl flex-wrap gap-2.5 sm:mt-11 sm:gap-3">
+        {trustItems.map((item) => {
+          const Icon = item.icon;
 
-        <div className="glass flex items-center gap-3 rounded-2xl px-6 py-4">
+          return (
+            <div
+              key={item.title}
+              className="
+                glass
+                inline-flex
+                min-h-11
+                items-center
+                gap-2.5
+                rounded-xl
+                border border-white/10
+                px-3.5
+                py-2.5
+                text-sm
+                transition-all
+                duration-300
+                hover:border-white/20
+                hover:bg-white/[0.06]
+                sm:rounded-2xl
+                sm:px-4
+              "
+            >
+              <Icon
+                size={18}
+                className={`shrink-0 ${item.color}`}
+              />
 
-          <Sparkles className="text-cyan-400" size={20} />
-
-          <span className="font-medium">
-            Modern UI/UX
-          </span>
-
-        </div>
-
-        <div className="glass flex items-center gap-3 rounded-2xl px-6 py-4">
-
-          <Zap className="text-yellow-400" size={20} />
-
-          <span className="font-medium">
-            Fast Performance
-          </span>
-
-        </div>
-
-        <div className="glass flex items-center gap-3 rounded-2xl px-6 py-4">
-
-          <BadgeCheck className="text-emerald-400" size={20} />
-
-          <span className="font-medium">
-            SEO Ready
-          </span>
-
-        </div>
-
+              <span className="whitespace-nowrap font-medium text-slate-200">
+                {item.title}
+              </span>
+            </div>
+          );
+        })}
       </div>
 
-      {/* CTA */}
+      {/* =====================================================
+          CTA BUTTONS
+      ===================================================== */}
 
-      <div className="mt-14">
+      <div className="mt-9 sm:mt-11">
         <HeroButtons />
       </div>
 
