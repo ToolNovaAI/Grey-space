@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://grey-zen.github.io"),
+  metadataBase: new URL("https://grey-space.vercel.app"),
 
   title: {
     default: "Grey Space | Website Developer & Digital Growth Specialist",
@@ -63,6 +63,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://grey-zen.github.io",
+    canonical: "https://grey-space.vercel.app",
   },
 
   openGraph: {
@@ -82,7 +83,7 @@ export const metadata: Metadata = {
     description:
       "Premium website development, SEO, Google Ads, Meta Ads, AI automation and digital marketing for businesses that want to grow online.",
 
-    url: "https://grey-zen.github.io",
+    url: "https://grey-space.vercel.app",
 
     siteName: "Grey Space",
 
