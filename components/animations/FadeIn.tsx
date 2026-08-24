@@ -56,9 +56,7 @@ export default function FadeIn({
       viewport={viewport}
       transition={{
         delay,
-        ...(duration !== undefined
-          ? { duration }
-          : {}),
+        ...(duration !== undefined ? { duration } : {}),
       }}
     >
       {children}
