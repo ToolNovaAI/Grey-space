@@ -210,6 +210,47 @@ export const projects = [
     gradient:
       "from-orange-500 via-red-500 to-rose-600",
   },
+
+  {
+    id: 6,
+
+    title: "Pet Care",
+
+    slug: "pet-care",
+
+    category: "Pet Care Website",
+
+    description:
+      "A premium Japanese pet care website designed for pet owners, featuring pet wellness, training, care information and a modern editorial experience with a clean Japanese-inspired UI.",
+
+    liveUrl:
+      "https://pet-care-in.vercel.app",
+
+    githubUrl: "#",
+
+    featured: false,
+
+    icon: Globe,
+
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Responsive Design",
+      "SEO",
+    ],
+
+    highlights: [
+      "Japanese UX",
+      "Premium UI/UX",
+      "Pet Care",
+      "Responsive",
+      "SEO Ready",
+    ],
+
+    gradient:
+      "from-pink-500 via-rose-500 to-orange-400",
+  },
 ];
 
 export const featuredProjects = projects.filter(
