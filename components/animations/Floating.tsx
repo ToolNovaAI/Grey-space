@@ -1,8 +1,7 @@
 "use client";
 
-import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { floatingAnimation } from "@/lib/animations";
+import type { ReactNode } from "react";
 
 interface FloatingProps {
   children: ReactNode;
