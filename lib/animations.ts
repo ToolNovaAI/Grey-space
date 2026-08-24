@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { Vimport type { Variants } from "framer-motion";
 
 /* -------------------------------------------------------------------------- */
 /*                                  EASING                                    */
@@ -17,7 +17,6 @@ export const fadeIn: Variants = {
 
   visible: {
     opacity: 1,
-
     transition: {
       duration: 0.6,
       ease,
@@ -32,7 +31,7 @@ export const fadeIn: Variants = {
 export const slideUp: Variants = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 36,
   },
 
   visible: {
@@ -53,7 +52,7 @@ export const slideUp: Variants = {
 export const slideDown: Variants = {
   hidden: {
     opacity: 0,
-    y: -40,
+    y: -36,
   },
 
   visible: {
@@ -74,7 +73,7 @@ export const slideDown: Variants = {
 export const slideLeft: Variants = {
   hidden: {
     opacity: 0,
-    x: 50,
+    x: 40,
   },
 
   visible: {
@@ -95,7 +94,7 @@ export const slideLeft: Variants = {
 export const slideRight: Variants = {
   hidden: {
     opacity: 0,
-    x: -50,
+    x: -40,
   },
 
   visible: {
@@ -116,7 +115,7 @@ export const slideRight: Variants = {
 export const scaleUp: Variants = {
   hidden: {
     opacity: 0,
-    scale: 0.9,
+    scale: 0.94,
   },
 
   visible: {
@@ -139,8 +138,8 @@ export const staggerContainer: Variants = {
 
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
+      staggerChildren: 0.1,
+      delayChildren: 0.08,
     },
   },
 };
@@ -164,7 +163,7 @@ export const floatingAnimation = {
 /* -------------------------------------------------------------------------- */
 
 export const rotateAnimation = {
-  rotate: [0, 6, 0, -6, 0],
+  rotate: [0, 5, 0, -5, 0],
 
   transition: {
     duration: 6,
@@ -179,8 +178,7 @@ export const rotateAnimation = {
 
 export const glowAnimation = {
   opacity: [0.6, 1, 0.6],
-
-  scale: [1, 1.05, 1],
+  scale: [1, 1.04, 1],
 
   transition: {
     duration: 3,
@@ -198,6 +196,7 @@ export const hoverScale = {
 
   transition: {
     duration: 0.25,
+    ease,
   },
 };
 
