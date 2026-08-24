@@ -1,49 +1,132 @@
 export default function HeroBackground() {
   return (
     <>
-      {/* Main Background */}
+      {/* =====================================================
+          BASE BACKGROUND
+      ===================================================== */}
+
       <div className="absolute inset-0 -z-20 overflow-hidden bg-[#050816]" />
 
-      {/* Blue Glow */}
-      <div className="absolute left-[-220px] top-[-180px] -z-10 h-[520px] w-[520px] rounded-full bg-blue-500/20 blur-[140px] animate-pulse" />
+      {/* =====================================================
+          PRIMARY BLUE GLOW
+      ===================================================== */}
 
-      {/* Purple Glow */}
       <div
-        className="absolute right-[-180px] top-[120px] -z-10 h-[420px] w-[420px] rounded-full bg-violet-500/20 blur-[140px] animate-pulse"
-        style={{ animationDelay: "1.5s" }}
+        className="
+          pointer-events-none
+          absolute
+          -left-48
+          -top-48
+          -z-10
+          h-[420px]
+          w-[420px]
+          rounded-full
+          bg-blue-500/[0.14]
+          blur-[130px]
+          sm:h-[520px]
+          sm:w-[520px]
+        "
       />
 
-      {/* Cyan Glow */}
+      {/* =====================================================
+          SECONDARY VIOLET GLOW
+      ===================================================== */}
+
       <div
-        className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 -z-10 h-[480px] w-[480px] rounded-full bg-cyan-500/15 blur-[150px] animate-pulse"
-        style={{ animationDelay: "2.5s" }}
+        className="
+          pointer-events-none
+          absolute
+          -right-48
+          top-24
+          -z-10
+          h-[360px]
+          w-[360px]
+          rounded-full
+          bg-violet-500/[0.12]
+          blur-[130px]
+          sm:h-[460px]
+          sm:w-[460px]
+        "
       />
 
-      {/* Grid Overlay */}
+      {/* =====================================================
+          BOTTOM CYAN GLOW
+      ===================================================== */}
+
       <div
-        className="absolute inset-0 -z-10 opacity-[0.06]"
+        className="
+          pointer-events-none
+          absolute
+          -bottom-52
+          left-1/2
+          -z-10
+          h-[400px]
+          w-[400px]
+          -translate-x-1/2
+          rounded-full
+          bg-cyan-500/[0.10]
+          blur-[140px]
+          sm:h-[500px]
+          sm:w-[500px]
+        "
+      />
+
+      {/* =====================================================
+          SUBTLE GRID
+      ===================================================== */}
+
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.035]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+            linear-gradient(
+              rgba(255,255,255,0.12) 1px,
+              transparent 1px
+            ),
+            linear-gradient(
+              90deg,
+              rgba(255,255,255,0.12) 1px,
+              transparent 1px
+            )
           `,
-          backgroundSize: "48px 48px",
+          backgroundSize: "56px 56px",
         }}
       />
 
-      {/* Top Fade */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#050816] to-transparent" />
+      {/* =====================================================
+          CENTER RADIAL LIGHT
+      ===================================================== */}
 
-      {/* Bottom Fade */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050816] to-transparent" />
-
-      {/* Noise Texture */}
       <div
-        className="absolute inset-0 opacity-[0.03] mix-blend-soft-light"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-60"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 38%, rgba(59,130,246,0.08), transparent 42%)",
+        }}
+      />
+
+      {/* =====================================================
+          TOP FADE
+      ===================================================== */}
+
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-[#050816] via-[#050816]/70 to-transparent sm:h-40" />
+
+      {/* =====================================================
+          BOTTOM FADE
+      ===================================================== */}
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#050816] via-[#050816]/60 to-transparent sm:h-52" />
+
+      {/* =====================================================
+          SUBTLE NOISE
+      ===================================================== */}
+
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.018]"
         style={{
           backgroundImage:
             "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-          backgroundSize: "22px 22px",
+          backgroundSize: "24px 24px",
         }}
       />
     </>
